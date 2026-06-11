@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
     --moss: #2C3B2E;
     --sage: #C8D9C2;
@@ -20,9 +20,9 @@
     --serif-display: 'Libre Baskerville', Georgia, serif;
     --serif-body: 'Lora', Georgia, serif;
   }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     font-family: var(--serif-body);
     background: var(--cream);
@@ -30,7 +30,7 @@
     line-height: 1.7;
     font-size: 17px;
   }
-
+ 
   /* NAV */
   nav {
     position: fixed;
@@ -44,7 +44,7 @@
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(44, 59, 46, 0.1);
   }
-
+ 
   .nav-brand {
     font-family: var(--serif-display);
     font-size: 1.1rem;
@@ -52,14 +52,26 @@
     color: var(--moss);
     letter-spacing: 0.04em;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
   }
-
+ 
+  .nav-brand-sub {
+    font-family: var(--serif-body);
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+    text-transform: uppercase;
+  }
+ 
   .nav-links {
     display: flex;
     gap: 2.5rem;
     list-style: none;
   }
-
+ 
   .nav-links a {
     font-family: var(--serif-body);
     font-size: 0.875rem;
@@ -68,9 +80,9 @@
     letter-spacing: 0.03em;
     transition: color 0.2s;
   }
-
+ 
   .nav-links a:hover { color: var(--moss); }
-
+ 
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -80,11 +92,11 @@
     max-width: 1100px;
     margin: 0 auto;
   }
-
+ 
   .hero-inner {
     max-width: 680px;
   }
-
+ 
   .hero-eyebrow {
     font-family: var(--serif-body);
     font-size: 0.8rem;
@@ -93,28 +105,28 @@
     color: var(--mid);
     margin-bottom: 2rem;
   }
-
+ 
   .hero h1 {
     font-family: var(--serif-display);
-    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
     font-weight: 400;
-    line-height: 1.15;
+    line-height: 1.5;
     color: var(--moss);
     margin-bottom: 1.75rem;
   }
-
+ 
   .hero h1 em {
     font-style: italic;
     color: var(--ink);
   }
-
+ 
   .hero-body {
     font-size: 1.05rem;
     color: #3D4D3E;
     max-width: 520px;
     margin-bottom: 2.5rem;
   }
-
+ 
   .hero-cta {
     display: inline-block;
     font-family: var(--serif-body);
@@ -127,9 +139,9 @@
     text-decoration: none;
     transition: background 0.2s;
   }
-
+ 
   .hero-cta:hover { background: #1A2B1C; }
-
+ 
   .hero-scroll {
     position: absolute;
     bottom: 2.5rem;
@@ -145,7 +157,7 @@
     color: var(--mid);
     text-decoration: none;
   }
-
+ 
   .hero-scroll::after {
     content: '';
     width: 1px;
@@ -153,14 +165,14 @@
     background: var(--mid);
     opacity: 0.4;
   }
-
+ 
   /* SECTION BASE */
   section {
     padding: 6rem 3rem;
     max-width: 1100px;
     margin: 0 auto;
   }
-
+ 
   .section-label {
     font-size: 0.75rem;
     letter-spacing: 0.15em;
@@ -171,14 +183,14 @@
     align-items: center;
     gap: 1rem;
   }
-
+ 
   .section-label::after {
     content: '';
     flex: 1;
     height: 1px;
     background: rgba(44, 59, 46, 0.2);
   }
-
+ 
   /* ABOUT */
   .about-grid {
     display: grid;
@@ -186,7 +198,7 @@
     gap: 5rem;
     align-items: start;
   }
-
+ 
   .about-heading {
     font-family: var(--serif-display);
     font-size: clamp(1.8rem, 3vw, 2.6rem);
@@ -195,22 +207,22 @@
     color: var(--moss);
     margin-bottom: 2rem;
   }
-
+ 
   .about-heading em { font-style: italic; }
-
+ 
   .about-body p {
     color: #3D4D3E;
     margin-bottom: 1.2rem;
     font-size: 1rem;
   }
-
+ 
   .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 2rem;
   }
-
+ 
   .tag {
     font-family: var(--serif-body);
     font-size: 0.75rem;
@@ -219,34 +231,34 @@
     border: 1px solid rgba(44, 59, 46, 0.35);
     padding: 0.3rem 0.8rem;
   }
-
+ 
   /* WORK */
   #work {
     background: var(--moss);
     max-width: 100%;
     padding: 6rem 3rem;
   }
-
+ 
   #work > .section-inner {
     max-width: 1100px;
     margin: 0 auto;
   }
-
+ 
   #work .section-label {
     color: rgba(200, 217, 194, 0.6);
   }
-
+ 
   #work .section-label::after {
     background: rgba(200, 217, 194, 0.2);
   }
-
+ 
   .cases-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5px;
     background: rgba(200, 217, 194, 0.15);
   }
-
+ 
   .case-card {
     background: var(--moss);
     padding: 2.5rem 2rem 2rem;
@@ -256,11 +268,11 @@
     text-decoration: none;
     display: block;
   }
-
+ 
   .case-card:hover {
     background: #243526;
   }
-
+ 
   .case-num {
     font-family: var(--serif-display);
     font-size: 0.7rem;
@@ -268,7 +280,7 @@
     color: rgba(200, 217, 194, 0.45);
     margin-bottom: 2.5rem;
   }
-
+ 
   .case-sector {
     font-size: 0.7rem;
     letter-spacing: 0.12em;
@@ -277,7 +289,7 @@
     opacity: 0.7;
     margin-bottom: 0.75rem;
   }
-
+ 
   .case-title {
     font-family: var(--serif-display);
     font-size: 1.25rem;
@@ -286,20 +298,20 @@
     line-height: 1.3;
     margin-bottom: 1.25rem;
   }
-
+ 
   .case-body {
     font-size: 0.875rem;
     color: rgba(200, 217, 194, 0.65);
     line-height: 1.65;
     margin-bottom: 2rem;
   }
-
+ 
   .case-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
   }
-
+ 
   .case-tag {
     font-size: 0.7rem;
     letter-spacing: 0.05em;
@@ -307,7 +319,7 @@
     border: 1px solid rgba(200, 217, 194, 0.2);
     padding: 0.2rem 0.6rem;
   }
-
+ 
   .case-arrow {
     margin-top: 2rem;
     font-size: 0.75rem;
@@ -316,9 +328,9 @@
     letter-spacing: 0.08em;
     transition: opacity 0.2s;
   }
-
+ 
   .case-card:hover .case-arrow { opacity: 1; }
-
+ 
   /* APPROACH */
   .approach-grid {
     display: grid;
@@ -326,7 +338,7 @@
     gap: 5rem;
     align-items: start;
   }
-
+ 
   .approach-heading {
     font-family: var(--serif-display);
     font-size: clamp(1.6rem, 2.5vw, 2.2rem);
@@ -336,22 +348,22 @@
     position: sticky;
     top: 6rem;
   }
-
+ 
   .approach-heading em { font-style: italic; }
-
+ 
   .pillars {
     display: flex;
     flex-direction: column;
     gap: 0;
   }
-
+ 
   .pillar {
     padding: 2rem 0;
     border-bottom: 1px solid rgba(44, 59, 46, 0.12);
   }
-
+ 
   .pillar:first-child { border-top: 1px solid rgba(44, 59, 46, 0.12); }
-
+ 
   .pillar-title {
     font-family: var(--serif-display);
     font-size: 1rem;
@@ -359,54 +371,54 @@
     color: var(--moss);
     margin-bottom: 0.6rem;
   }
-
+ 
   .pillar-body {
     font-size: 0.95rem;
     color: #4A5C4B;
     line-height: 1.7;
   }
-
+ 
   /* CONTACT */
   #contact {
     background: var(--mist);
     max-width: 100%;
     padding: 6rem 3rem;
   }
-
+ 
   #contact > .section-inner {
     max-width: 1100px;
     margin: 0 auto;
   }
-
+ 
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: center;
   }
-
+ 
   .contact-heading {
     font-family: var(--serif-display);
-    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-size: clamp(1.4rem, 2vw, 1.9rem);
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.35;
     color: var(--moss);
   }
-
+ 
   .contact-heading em { font-style: italic; }
-
+ 
   .contact-body {
     font-size: 0.95rem;
     color: #4A5C4B;
     margin-top: 1.5rem;
   }
-
+ 
   .contact-links {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
   }
-
+ 
   .contact-link {
     display: flex;
     align-items: center;
@@ -419,10 +431,10 @@
     padding-bottom: 1.25rem;
     border-bottom: 1px solid rgba(44, 59, 46, 0.15);
   }
-
+ 
   .contact-link:last-child { border-bottom: none; }
   .contact-link:hover { opacity: 0.6; }
-
+ 
   .contact-link-label {
     font-size: 0.7rem;
     letter-spacing: 0.1em;
@@ -431,13 +443,13 @@
     display: block;
     margin-bottom: 0.15rem;
   }
-
+ 
   .contact-link-value {
     font-family: var(--serif-display);
     font-size: 0.95rem;
     color: var(--moss);
   }
-
+ 
   /* FOOTER */
   footer {
     padding: 2rem 3rem;
@@ -446,7 +458,7 @@
     align-items: center;
     border-top: 1px solid rgba(44, 59, 46, 0.12);
   }
-
+ 
   .footer-brand {
     font-family: var(--serif-display);
     font-size: 0.85rem;
@@ -454,13 +466,13 @@
     color: var(--moss);
     letter-spacing: 0.05em;
   }
-
+ 
   .footer-copy {
     font-size: 0.75rem;
     color: var(--mid);
     letter-spacing: 0.04em;
   }
-
+ 
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
@@ -473,16 +485,16 @@
     .approach-heading { position: static; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
-
+ 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
 </style>
 </head>
 <body>
-
+ 
 <nav>
-  <a href="#" class="nav-brand">Matiz</a>
+  <a href="#" class="nav-brand">Matiz<span class="nav-brand-sub">Digital transformation · Sandra Guiomar</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#work">Work</a></li>
@@ -490,129 +502,129 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <div style="position:relative;">
   <div class="hero">
     <div class="hero-inner">
-      <p class="hero-eyebrow">Digital Transformation · Brand Presence · Strategic Storytelling</p>
-      <h1>Brands with distinct identities deserve <em>digital presences to match.</em></h1>
-      <p class="hero-body">I work with small businesses and artisan producers - particularly in Portugal's agri-food sector — to build credible digital presences through websites, automation, and strategic storytelling. No developer dependencies.</p>
+      <p class="hero-eyebrow">I think like a marketer. I build like a designer.</p>
+      <h1>Some brands carry more<br>than a product.<br><em>Their digital presence should feel like<br>it knows that.</em></h1>
+      <p class="hero-body">I work with organisations and producers where what they do carries real weight - a way of making things, a set of values, a purpose that took time to become what it is.<br><br>I don't build for brands. I build from inside them.</p>
       <a href="#work" class="hero-cta">View selected work</a>
     </div>
   </div>
   <a href="#about" class="hero-scroll">scroll</a>
 </div>
-
+ 
 <section id="about">
   <p class="section-label">About</p>
   <div class="about-grid">
     <div>
-      <h2 class="about-heading">The distance between what a brand <em>is</em> and what it shows online.</h2>
+      <h2 class="about-heading">I don't make websites.<br><em>I make environments.</em></h2>
     </div>
     <div class="about-body">
-      <p>I'm Sandra Guiomar, and that gap is where I work. Under the Matiz brand, I help producers, studios, and mission-driven organisations translate rich, embodied identities into digital presences that hold up — without creating dependency on developers for every update.</p>
-      <p>My background sits at the intersection of digital strategy and brand narrative. I pay close attention to what a brand communicates before anyone reads a word: the texture of a page, whether it breathes, what the eye does first.</p>
-      <p>Currently focused on Portugal's agri-food interior — working with producers whose craft deserves the kind of digital presence that matches what ends up in the jar, the bottle, the basket.</p>
+      <p>I thought school was for making drawings. Turns out, I wasn't wrong - just early. What followed was a long, useful detour: enough business to understand what organisations need, enough communication to close the gap between the two. The drawing was always there. The detour gave it substance.</p>
+      <p>Before I touch the tools, I need to understand who's on the other side of the screen - what they're afraid of, what they're hoping for, what would make them stay. That's where the work begins.</p>
+      <p>The briefs I'm drawn to are the ones where what a brand does carries genuine purpose - whether that's decades of accumulated craft, a regenerative production model, or a mission that puts real people first. What matters is that the <em>why</em> has weight. The digital presence is where that weight either lands or gets lost.</p>
       <div class="tags">
         <span class="tag">Webflow</span>
         <span class="tag">Shopify</span>
         <span class="tag">Brevo</span>
         <span class="tag">Brand Strategy</span>
         <span class="tag">Automation</span>
-        <span class="tag">Agri-food</span>
-        <span class="tag">Notion</span>
-        <span class="tag">Gamma</span>
+        <span class="tag">Emotional Design</span>
+        <span class="tag">ESG · Impact</span>
+        <span class="tag">UX Writing</span>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <div id="work">
   <div class="section-inner">
     <p class="section-label" style="color:rgba(200,217,194,0.6); --after-bg:rgba(200,217,194,0.2);">Selected work</p>
     <div class="cases-grid">
-
+ 
       <a class="case-card" href="https://app.notion.com/p/Cuidadores-36335f2993c08009984cc2d50447491a" target="_blank" rel="noopener">
         <p class="case-num">01</p>
-        <p class="case-sector">Social impact · IPSS</p>
-        <h3 class="case-title">Giving a community organisation a digital presence worth its mission</h3>
-        <p class="case-body">Website redesign for a social solidarity institution — translating institutional trust into a site structure that serves both beneficiaries and donors, built for autonomy.</p>
+        <p class="case-sector">Social impact · Informal caregiving</p>
+        <h3 class="case-title">Do you look after someone?</h3>
+        <p class="case-body">Many caregivers don't recognise themselves as such. They're too exhausted and absorbed in the other person to look for support - and too used to not being the one who needs it. The work was about reaching them regardless of the name they give to what they do: removing every barrier, visual and emotional, until the next step felt like relief, not effort.</p>
         <div class="case-tags">
           <span class="case-tag">Website redesign</span>
-          <span class="case-tag">Information architecture</span>
-          <span class="case-tag">Autonomy-first build</span>
+          <span class="case-tag">Audience reframing</span>
+          <span class="case-tag">Content strategy</span>
         </div>
         <p class="case-arrow">View on Notion →</p>
       </a>
-
+ 
       <a class="case-card" href="https://app.notion.com/p/Artisan-Food-Brand-36335f2993c080c5a5e9dc88ecf4ba15" target="_blank" rel="noopener">
         <p class="case-num">02</p>
-        <p class="case-sector">Artisan food · Brand strategy</p>
-        <h3 class="case-title">Acquisition strategy for an artisan food brand entering new markets</h3>
-        <p class="case-body">Digital presence and customer acquisition strategy for an established artisan producer, mapping the path from craft credibility to e-commerce conversion — without diluting what makes the product distinct.</p>
+        <p class="case-sector">Artisan food · E-commerce</p>
+        <h3 class="case-title">How do you sell a sensory experience through a screen?</h3>
+        <p class="case-body">From regenerative soil to stone-milled grain to wood-fired kitchen - a food brand where the ingredient's journey is part of the flavour. The challenge was making that felt online: the smell of bread in the oven, the texture of an afternoon crust, the pleasure of a meal that carries no compromise. Food that stops being a meal the moment it becomes what we live around it, through it, because of it.</p>
         <div class="case-tags">
           <span class="case-tag">Brand strategy</span>
           <span class="case-tag">E-commerce</span>
-          <span class="case-tag">Acquisition</span>
+          <span class="case-tag">Sensory storytelling</span>
         </div>
         <p class="case-arrow">View on Notion →</p>
       </a>
-
+ 
       <a class="case-card" href="https://app.notion.com/p/P-tina-36335f2993c080caa7c4ef7e92655deb" target="_blank" rel="noopener">
         <p class="case-num">03</p>
-        <p class="case-sector">Arts & culture · Multi-generational</p>
-        <h3 class="case-title">Pátina — platform for a multi-generational crafts and arts studio</h3>
-        <p class="case-body">Digital platform concept for an atelier holding decades of practice across generations — balancing heritage with discoverability, and archive with invitation.</p>
+        <p class="case-sector">Arts & craft · Multi-generational studio</p>
+        <h3 class="case-title">The smell of clay. The weight of a tool worn smooth. Knowledge passed hand to hand.</h3>
+        <p class="case-body">A studio holding generations of craft - wood, clay, natural dye, glass, metal. The digital platform had to carry that without flattening it: heritage dressed in contemporaneity, where accumulated knowledge finds new hands to pass through.</p>
         <div class="case-tags">
           <span class="case-tag">Platform design</span>
           <span class="case-tag">Cultural identity</span>
-          <span class="case-tag">Storytelling</span>
+          <span class="case-tag">Craft heritage</span>
         </div>
         <p class="case-arrow">View on Notion →</p>
       </a>
-
+ 
     </div>
   </div>
 </div>
-
+ 
 <section id="approach">
   <p class="section-label">How I work</p>
   <div class="approach-grid">
-    <h2 class="approach-heading">The craft behind the <em>strategy.</em></h2>
+    <h2 class="approach-heading">The craft<br><em>behind the strategy.</em></h2>
     <div class="pillars">
       <div class="pillar">
         <p class="pillar-title">Identity before interface</p>
-        <p class="pillar-body">A digital presence that doesn't reflect who you actually are will always feel wrong — to you and to your audience. I start with brand identity, not with platform choice. The platform follows.</p>
+        <p class="pillar-body">A digital presence that doesn't reflect who you actually are will always feel wrong - to you and to your audience. I start with brand identity, not with platform choice. The platform follows.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-title">Inside the brand, not outside it</p>
+        <p class="pillar-body">Before I touch the tools, I need to understand who's on the other side of the screen - what they're afraid of, what they're hoping for, what would make them stay. That's where every decision begins.</p>
       </div>
       <div class="pillar">
         <p class="pillar-title">Autonomy as a design principle</p>
         <p class="pillar-body">Every site I build, you should be able to run. No recurring agency dependency for a banner update or a new product page. The build is complete when you don't need me anymore.</p>
       </div>
       <div class="pillar">
-        <p class="pillar-title">Craft and digital in dialogue</p>
-        <p class="pillar-body">The producers and studios I work with have invested years in their craft. The digital work earns its place by being legible to that investment — not flattening it into a template.</p>
-      </div>
-      <div class="pillar">
-        <p class="pillar-title">Roots in the territory</p>
-        <p class="pillar-body">I work extensively with Portugal's agri-food interior — producers whose geography, tradition, and production methods are part of the product's value. Making that legible digitally is both a creative and a strategic challenge.</p>
+        <p class="pillar-title">Purpose with weight</p>
+        <p class="pillar-body">The work I'm drawn to is with brands where the why is genuine - a craft refined over time, a regenerative production model, a mission that puts real people first. Heritage or startup, established or just beginning: what matters is that the purpose is real. The digital presence is where that either lands or gets lost.</p>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <div id="contact">
   <div class="section-inner">
     <p class="section-label">Let's talk</p>
     <div class="contact-grid">
       <div>
-        <h2 class="contact-heading">A conversation before a <em>proposal.</em></h2>
-        <p class="contact-body">I work with 3–5 clients at a time. If you're building something with a distinct identity and want a digital presence to match, get in touch. I'll tell you honestly whether we're a fit.</p>
+        <h2 class="contact-heading">Start with a conversation.<br><em>See where it goes.</em></h2>
+        <p class="contact-body">I work with 3–5 clients at a time. If what you do carries real purpose and your digital presence hasn't caught up with that yet, let's talk. I'll tell you honestly whether we're a fit.</p>
       </div>
       <div class="contact-links">
-        <a href="mailto:sandraguiomar@matiz.studio" class="contact-link">
+        <a href="mailto:sandraguiom24@gmail.com" class="contact-link">
           <div>
             <span class="contact-link-label">Email</span>
-            <span class="contact-link-value">sandraguiomar@matiz.studio</span>
+            <span class="contact-link-value">sandraguiom24@gmail.com</span>
           </div>
         </a>
         <a href="https://linkedin.com/in/sandra-guiomar" target="_blank" rel="noopener" class="contact-link">
@@ -631,11 +643,12 @@
     </div>
   </div>
 </div>
-
+ 
 <footer>
   <span class="footer-brand">Matiz</span>
   <span class="footer-copy">Sandra Guiomar · Digital Transformation Consultant · Portugal</span>
 </footer>
-
+ 
 </body>
 </html>
+ 
