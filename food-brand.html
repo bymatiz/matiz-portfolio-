@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artisan Food Brand - Matiz by Sara Moniz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --moss: #2C3B2E; --sage: #C8D9C2; --cream: #F5F2ED;
+    --ink: #1A1F1B; --mist: #E8EDE6; --mid: #6B7D6D;
+    --serif-display: 'Libre Baskerville', Georgia, serif;
+    --serif-body: 'Lora', Georgia, serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--serif-body); background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(245,242,237,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(44,59,46,0.1);
+  }
+  .nav-brand { font-family: var(--serif-display); font-size: 1.1rem; font-weight: 700; color: var(--moss); letter-spacing: 0.04em; text-decoration: none; display: flex; flex-direction: column; gap: 0.1rem; }
+  .nav-brand-sub { font-family: var(--serif-body); font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; color: var(--mid); text-transform: uppercase; }
+  .nav-back { font-family: var(--serif-body); font-size: 0.875rem; color: var(--mid); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+  .nav-back:hover { color: var(--moss); }
+
+  /* HERO */
+  .case-hero { padding-top: 6rem; background: #3A4A2C; }
+  .case-hero-inner {
+    max-width: 1100px; margin: 0 auto;
+    padding: 5rem 3rem 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end;
+  }
+  .case-eyebrow { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(200,217,194,0.5); margin-bottom: 1.5rem; } 
+  .case-hero h1 { font-family: var(--serif-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; line-height: 1.3; color: #F0E6D0; margin-bottom: 2rem; }
+  .case-hero h1 em { font-style: italic; color: rgba(240,230,208,0.55); }
+  .case-meta { display: flex; flex-direction: column; gap: 1.5rem; padding-bottom: 3rem; }
+  .case-meta-item { border-top: 1px solid rgba(240,230,208,0.12); padding-top: 1rem; }
+  .case-meta-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(232,237,230,0.35); margin-bottom: 0.35rem; }
+  .case-meta-value { font-size: 0.875rem; color: rgba(232,237,230,0.7); }
+
+  .hero-image-full {
+    width: 100%; height: 520px;
+    object-fit: cover; object-position: center 30%;
+    display: block; margin-top: 3rem;
+  }
+
+  /* BODY */
+  .case-body-wrap { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+  .case-section { padding: 5rem 0; border-bottom: 1px solid rgba(44,59,46,0.1); }
+  .case-section:last-of-type { border-bottom: none; }
+  .case-section-grid { display: grid; grid-template-columns: 200px 1fr; gap: 4rem; align-items: start; }
+  .case-section-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); padding-top: 0.3rem; position: sticky; top: 6rem; }
+  .case-section-content h2 { font-family: var(--serif-display); font-size: clamp(1.3rem, 2vw, 1.7rem); font-weight: 400; color: var(--moss); line-height: 1.35; margin-bottom: 1.5rem; }
+  .case-section-content h2 em { font-style: italic; }
+  .case-section-content p { font-size: 0.975rem; color: #3D4D3E; line-height: 1.8; margin-bottom: 1.2rem; }
+  .case-section-content p:last-child { margin-bottom: 0; }
+
+  .case-image { width: 100%; display: block; margin: 2.5rem 0; }
+  .case-image-caption { font-size: 0.75rem; color: var(--mid); letter-spacing: 0.04em; margin-top: -1.5rem; margin-bottom: 2.5rem; font-style: italic; }
+
+  .image-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2.5rem 0; }
+  .image-pair img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+  .funnel-steps { display: flex; flex-direction: column; gap: 0; margin: 2rem 0; }
+  .funnel-step { padding: 1.75rem 2rem; border-left: 2px solid var(--sage); margin-bottom: 1rem; background: #EDE5D0; }
+  .funnel-step-num { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.5rem; }
+  .funnel-step-title { font-family: var(--serif-display); font-size: 1rem; color: var(--moss); margin-bottom: 0.5rem; }
+  .funnel-step-body { font-size: 0.9rem; color: #4A5C4B; line-height: 1.65; margin: 0; }
+
+  .phase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+  .phase-block { padding: 1.75rem; background: #EDE5D0; display: flex; flex-direction: column; }
+  .phase-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.75rem; }
+  .phase-title { font-family: var(--serif-display); font-size: 0.95rem; color: var(--moss); margin-bottom: 1rem; }
+  .phase-items { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+  .phase-items li { font-size: 0.85rem; color: #4A5C4B; padding-left: 1.2rem; position: relative; }
+  .phase-items li::before { content: '→'; position: absolute; left: 0; color: var(--mid); font-size: 0.75rem; }
+
+  .tools { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .tool-tag { font-size: 0.75rem; letter-spacing: 0.05em; color: var(--moss); border: 1px solid rgba(44,59,46,0.3); padding: 0.3rem 0.8rem; }
+
+  .reflection-block { background: #EDE5D0; padding: 3rem; margin-top: 2rem; }
+  .reflection-block blockquote { font-family: var(--serif-display); font-size: 1.1rem; font-style: italic; color: var(--moss); line-height: 1.6; }
+
+  .confidential-note { font-size: 0.8rem; color: var(--mid); font-style: italic; border-top: 1px solid rgba(44,59,46,0.12); padding-top: 1rem; margin-top: 2rem; }
+
+  .case-cta { background: #3A4A2C; padding: 6rem 3rem; }
+  .case-cta-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .case-cta h2 { font-family: var(--serif-display); font-size: clamp(1.4rem, 2vw, 2rem); font-weight: 400; color: #E8EDE6; line-height: 1.35; }
+  .case-cta h2 em { font-style: italic; }
+  .case-cta p { font-size: 0.95rem; color: rgba(232,237,230,0.6); margin-top: 1.25rem; line-height: 1.7; }
+  .cta-link { display: inline-block; font-family: var(--serif-body); font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; color: #3A4A2C; background: #E8EDE6; padding: 0.85rem 2rem; text-decoration: none; transition: background 0.2s; margin-top: 2rem; }
+  .cta-link:hover { background: #C8D9C2; }
+  .back-link { display: inline-block; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(232,237,230,0.4); text-decoration: none; margin-top: 1.5rem; transition: color 0.2s; }
+  .back-link:hover { color: #E8EDE6; }
+
+  footer { padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(44,59,46,0.12); }
+  .footer-brand { font-family: var(--serif-display); font-size: 0.85rem; font-weight: 700; color: var(--moss); letter-spacing: 0.05em; }
+  .footer-copy { font-size: 0.75rem; color: var(--mid); letter-spacing: 0.04em; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .case-hero-inner { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem 0; }
+    .hero-image-full { height: 280px; }
+    .case-body-wrap { padding: 0 1.5rem; }
+    .case-section-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .case-section-label { position: static; }
+    .image-pair { grid-template-columns: 1fr; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .case-cta { padding: 4rem 1.5rem; }
+    .case-cta-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Matiz<span class="nav-brand-sub">Digital transformation · Sara Moniz</span></a>
+  <a href="index.html#work" class="nav-back">← Back to portfolio</a>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div>
+      <p class="case-eyebrow">Artisan Food · Acquisition Strategy · 2025</p>
+      <h1>How do you sell a sensory experience<br><em>through a screen?</em></h1>
+    </div>
+    <div class="case-meta">
+      <div class="case-meta-item">
+        <p class="case-meta-label">Sector</p>
+        <p class="case-meta-value">Artisan food · E-commerce · Plant-based</p>
+      </div>
+      <div class="case-meta-item">
+        <p class="case-meta-label">Scope</p>
+        <p class="case-meta-value">Brand strategy · Acquisition · Copywriting</p>
+      </div>
+      <div class="case-meta-item">
+        <p class="case-meta-label">Tools</p>
+        <p class="case-meta-value">Wix · Tally · Airtable · Email Automation</p>
+      </div>
+      <div class="case-meta-item">
+        <p class="case-meta-label">Status</p>
+        <p class="case-meta-value">Phase 1 complete · Phase 2 in development</p>
+      </div>
+    </div>
+  </div>
+  <img src="img-food-hero1.png" alt="Artisan food spread - wood-fired preparations" class="hero-image-full">
+</div>
+
+<div class="case-body-wrap">
+
+  <div class="case-section">
+    <div class="case-section-grid">
+      <p class="case-section-label">Situation</p>
+      <div class="case-section-content">
+        <h2>Food that stops being a meal<br><em>the moment it becomes what we live around it.</em></h2>
+        <p>An online store of artisan frozen meals: plant-based, wood-fire baked, built on regenerative agriculture principles. From regenerative soil to stone-milled grain to wood-fired kitchen - a food brand where the ingredient's journey is part of the flavour.</p>
+        <p>The central challenge: the customer can't taste before buying. The first purchase requires trust that doesn't yet exist - no history, no reviews, no physical store.</p>
+        <p class="confidential-note">Brand name withheld pending trademark registration.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <div class="case-section-grid">
+      <p class="case-section-label">The challenge</p>
+      <div class="case-section-content">
+        <h2>The smell of bread in the oven<br><em>doesn't travel through a screen.</em></h2>
+        <img src="img-food-hero2.png" alt="Artisan food detail - pastry and accompaniments" class="case-image">
+        <p class="case-image-caption">The product's visual identity: dark stone, linen, aged wood. Rustic but refined.</p>
+        <p>The answer wasn't in the photography - though the photography matters. It was in the message, the strategy, and the sequence of moments between the first click and the first real order.</p>
+        <p>The audience: people who want to eat well and don't have time - but refuse to sacrifice pleasure, quality, and awareness of what they put on the table. No compromises - ethical, nutritional, sensory.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <div class="case-section-grid">
+      <p class="case-section-label">The approach</p>
+      <div class="case-section-content">
+        <h2>A three-moment strategy:<br><em>image convinces, story involves, flavour retains.</em></h2>
+        <p>The acquisition funnel was designed as a sequence of experiences - each removing one more layer of hesitation before the first real order.</p>
+
+        <div class="funnel-steps">
+          <div class="funnel-step">
+            <p class="funnel-step-num">Moment 01 · The tasting</p>
+            <p class="funnel-step-title">Choose 5 flavours. Pay only €3.90 in shipping.</p>
+            <p class="funnel-step-body">Reimbursed in full on the first real order. The leap of faith disappears. The risk is removed before it becomes a reason not to try.</p>
+          </div>
+          <div class="funnel-step">
+            <p class="funnel-step-num">Moment 02 · The form as experience</p>
+            <p class="funnel-step-title">Personalised in real time.</p>
+            <p class="funnel-step-body">"Ana Silva, each detail is requested only to prepare your experience with the care it deserves." Feels like composing a meal, not filling a form.</p>
+          </div>
+          <div class="funnel-step">
+            <p class="funnel-step-num">Moment 03 · The surprise</p>
+            <p class="funnel-step-title">A double benefit the customer didn't expect.</p>
+            <p class="funnel-step-body">Automated email with sensory language and a surprise 15% voucher - combined with the shipping reimbursement. The second order becomes natural.</p>
+          </div>
+        </div>
+
+        <img src="img-food-tally.png" alt="Tally form - personalised tasting experience" class="case-image">
+        <p class="case-image-caption">The Tally form: designed as an experience, not a checkout step.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <div class="case-section-grid">
+      <p class="case-section-label">What was delivered</p>
+      <div class="case-section-content">
+        <h2>Phase 1 complete.<br><em>Phase 2 in development.</em></h2>
+
+        <div class="phase-grid">
+          <div class="phase-block">
+            <p class="phase-label">Phase 1 · MVP & Concept Validation</p>
+            <p class="phase-title">From idea to first tasting</p>
+            <ul class="phase-items">
+              <li>Landing page with editorial visual identity</li>
+              <li>Multi-step Tally form with real-time personalisation</li>
+              <li>Airtable automation with personalised confirmation email</li>
+              <li>Voucher design with full brand identity</li>
+              <li>3-moment acquisition strategy</li>
+            </ul>
+            <div class="tools" style="margin-top:1rem;">
+              <span class="tool-tag">Wix</span>
+              <span class="tool-tag">Tally</span>
+              <span class="tool-tag">Airtable</span>
+            </div>
+          </div>
+          <div class="phase-block">
+            <p class="phase-label">Phase 2 · Scale & Commerce</p>
+            <p class="phase-title">In development</p>
+            <ul class="phase-items">
+              <li>Full e-commerce with editorial brand experience</li>
+              <li>Shopify-powered checkout and order management</li>
+              <li>Brevo email flows: post-purchase and retention</li>
+              <li>Webflow CMS for product storytelling</li>
+            </ul>
+            <div class="tools" style="margin-top:1rem;">
+              <span class="tool-tag">Webflow</span>
+              <span class="tool-tag">Shopify</span>
+              <span class="tool-tag">Brevo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <div class="case-section-grid">
+      <p class="case-section-label">Reflection</p>
+      <div class="case-section-content">
+        <div class="reflection-block">
+          <blockquote>"Tasting is easy. Returning is natural.<br><br>Some things can't be rushed - and the best ones taste like it."</blockquote>
+        </div>
+        <p style="margin-top:1.5rem;">The challenge wasn't technical. It was about making someone feel the warmth of a wood-fired kitchen through a screen - before they'd tasted a single thing. The strategy worked because it removed risk at every step, and replaced it with anticipation.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="case-cta">
+  <div class="case-cta-inner">
+    <div>
+      <h2>Launching a product and need to validate demand<br><em>before investing at scale?</em></h2>
+      <p>This acquisition model works for any brand that needs to earn trust before it has a track record. Start with a conversation.</p>
+      <a href="mailto:sara@matiz.studio" class="cta-link">Let's put your idea in the oven</a><br>
+      <a href="index.html#work" class="back-link">← Back to portfolio</a>
+    </div>
+    <div></div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-brand">Matiz</span>
+  <span class="footer-copy">Sara Moniz · Digital Transformation Consultant · Portugal</span>
+</footer>
+
+</body>
+</html>
