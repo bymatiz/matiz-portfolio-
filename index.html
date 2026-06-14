@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matiz - Sandra Guiomar</title>
+<title>Matiz - Sara Moniz</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
   :root {
-    --moss: #2C3B2E;
+    --moss: #4E6650;
     --sage: #C8D9C2;
     --cream: #F5F2ED;
     --ink: #1A1F1B;
@@ -21,9 +20,9 @@
     --serif-display: 'Libre Baskerville', Georgia, serif;
     --serif-body: 'Lora', Georgia, serif;
   }
- 
+
   html { scroll-behavior: smooth; }
- 
+
   body {
     font-family: var(--serif-body);
     background: var(--cream);
@@ -31,7 +30,7 @@
     line-height: 1.7;
     font-size: 17px;
   }
- 
+
   /* NAV */
   nav {
     position: fixed;
@@ -45,7 +44,7 @@
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(44, 59, 46, 0.1);
   }
- 
+
   .nav-brand {
     font-family: var(--serif-display);
     font-size: 1.1rem;
@@ -57,7 +56,7 @@
     flex-direction: column;
     gap: 0.1rem;
   }
- 
+
   .nav-brand-sub {
     font-family: var(--serif-body);
     font-size: 0.65rem;
@@ -66,13 +65,13 @@
     color: var(--mid);
     text-transform: uppercase;
   }
- 
+
   .nav-links {
     display: flex;
     gap: 2.5rem;
     list-style: none;
   }
- 
+
   .nav-links a {
     font-family: var(--serif-body);
     font-size: 0.875rem;
@@ -81,9 +80,9 @@
     letter-spacing: 0.03em;
     transition: color 0.2s;
   }
- 
+
   .nav-links a:hover { color: var(--moss); }
- 
+
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -93,11 +92,11 @@
     max-width: 1100px;
     margin: 0 auto;
   }
- 
+
   .hero-inner {
     max-width: 680px;
   }
- 
+
   .hero-eyebrow {
     font-family: var(--serif-body);
     font-size: 0.8rem;
@@ -106,7 +105,7 @@
     color: var(--mid);
     margin-bottom: 2rem;
   }
- 
+
   .hero h1 {
     font-family: var(--serif-display);
     font-size: clamp(1.6rem, 2.8vw, 2.2rem);
@@ -115,19 +114,19 @@
     color: var(--moss);
     margin-bottom: 1.75rem;
   }
- 
+
   .hero h1 em {
     font-style: italic;
-    color: var(--ink);
+    color: var(--mid);
   }
- 
+
   .hero-body {
     font-size: 1.05rem;
     color: #3D4D3E;
     max-width: 520px;
     margin-bottom: 2.5rem;
   }
- 
+
   .hero-cta {
     display: inline-block;
     font-family: var(--serif-body);
@@ -140,9 +139,9 @@
     text-decoration: none;
     transition: background 0.2s;
   }
- 
+
   .hero-cta:hover { background: #1A2B1C; }
- 
+
   .hero-scroll {
     position: absolute;
     bottom: 2.5rem;
@@ -158,7 +157,7 @@
     color: var(--mid);
     text-decoration: none;
   }
- 
+
   .hero-scroll::after {
     content: '';
     width: 1px;
@@ -166,14 +165,14 @@
     background: var(--mid);
     opacity: 0.4;
   }
- 
+
   /* SECTION BASE */
   section {
     padding: 6rem 3rem;
     max-width: 1100px;
     margin: 0 auto;
   }
- 
+
   .section-label {
     font-size: 0.75rem;
     letter-spacing: 0.15em;
@@ -184,14 +183,14 @@
     align-items: center;
     gap: 1rem;
   }
- 
+
   .section-label::after {
     content: '';
     flex: 1;
     height: 1px;
     background: rgba(44, 59, 46, 0.2);
   }
- 
+
   /* ABOUT */
   .about-grid {
     display: grid;
@@ -199,7 +198,7 @@
     gap: 5rem;
     align-items: start;
   }
- 
+
   .about-heading {
     font-family: var(--serif-display);
     font-size: clamp(1.8rem, 3vw, 2.6rem);
@@ -208,22 +207,22 @@
     color: var(--moss);
     margin-bottom: 2rem;
   }
- 
+
   .about-heading em { font-style: italic; }
- 
+
   .about-body p {
     color: #3D4D3E;
     margin-bottom: 1.2rem;
     font-size: 1rem;
   }
- 
+
   .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 2rem;
   }
- 
+
   .tag {
     font-family: var(--serif-body);
     font-size: 0.75rem;
@@ -232,34 +231,34 @@
     border: 1px solid rgba(44, 59, 46, 0.35);
     padding: 0.3rem 0.8rem;
   }
- 
+
   /* WORK */
   #work {
     background: var(--moss);
     max-width: 100%;
     padding: 6rem 3rem;
   }
- 
+
   #work > .section-inner {
     max-width: 1100px;
     margin: 0 auto;
   }
- 
+
   #work .section-label {
     color: rgba(200, 217, 194, 0.6);
   }
- 
+
   #work .section-label::after {
     background: rgba(200, 217, 194, 0.2);
   }
- 
+
   .cases-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5px;
     background: rgba(200, 217, 194, 0.15);
   }
- 
+
   .case-card {
     background: var(--moss);
     padding: 2.5rem 2rem 2rem;
@@ -270,11 +269,11 @@
     display: flex;
     flex-direction: column;
   }
- 
+
   .case-card:hover {
-    background: #243526;
+    background: #3A5040;
   }
- 
+
   .case-num {
     font-family: var(--serif-display);
     font-size: 0.7rem;
@@ -282,7 +281,7 @@
     color: rgba(200, 217, 194, 0.45);
     margin-bottom: 2.5rem;
   }
- 
+
   .case-sector {
     font-size: 0.7rem;
     letter-spacing: 0.12em;
@@ -291,7 +290,7 @@
     opacity: 0.7;
     margin-bottom: 0.75rem;
   }
- 
+
   .case-title {
     font-family: var(--serif-display);
     font-size: 1.25rem;
@@ -300,7 +299,7 @@
     line-height: 1.3;
     margin-bottom: 1.25rem;
   }
- 
+
   .case-body {
     font-size: 0.875rem;
     color: rgba(200, 217, 194, 0.65);
@@ -308,13 +307,13 @@
     margin-bottom: 2rem;
     flex: 1;
   }
- 
+
   .case-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
   }
- 
+
   .case-tag {
     font-size: 0.7rem;
     letter-spacing: 0.05em;
@@ -322,7 +321,7 @@
     border: 1px solid rgba(200, 217, 194, 0.2);
     padding: 0.2rem 0.6rem;
   }
- 
+
   .case-arrow {
     margin-top: 2rem;
     font-size: 0.75rem;
@@ -331,9 +330,9 @@
     letter-spacing: 0.08em;
     transition: opacity 0.2s;
   }
- 
+
   .case-card:hover .case-arrow { opacity: 1; }
- 
+
   /* APPROACH */
   .approach-grid {
     display: grid;
@@ -341,7 +340,7 @@
     gap: 5rem;
     align-items: start;
   }
- 
+
   .approach-heading {
     font-family: var(--serif-display);
     font-size: clamp(1.6rem, 2.5vw, 2.2rem);
@@ -351,22 +350,22 @@
     position: sticky;
     top: 6rem;
   }
- 
+
   .approach-heading em { font-style: italic; }
- 
+
   .pillars {
     display: flex;
     flex-direction: column;
     gap: 0;
   }
- 
+
   .pillar {
     padding: 2rem 0;
     border-bottom: 1px solid rgba(44, 59, 46, 0.12);
   }
- 
+
   .pillar:first-child { border-top: 1px solid rgba(44, 59, 46, 0.12); }
- 
+
   .pillar-title {
     font-family: var(--serif-display);
     font-size: 1rem;
@@ -374,32 +373,32 @@
     color: var(--moss);
     margin-bottom: 0.6rem;
   }
- 
+
   .pillar-body {
     font-size: 0.95rem;
     color: #4A5C4B;
     line-height: 1.7;
   }
- 
+
   /* CONTACT */
   #contact {
     background: var(--mist);
     max-width: 100%;
     padding: 6rem 3rem;
   }
- 
+
   #contact > .section-inner {
     max-width: 1100px;
     margin: 0 auto;
   }
- 
+
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: center;
   }
- 
+
   .contact-heading {
     font-family: var(--serif-display);
     font-size: clamp(1.4rem, 2vw, 1.9rem);
@@ -407,21 +406,21 @@
     line-height: 1.35;
     color: var(--moss);
   }
- 
+
   .contact-heading em { font-style: italic; }
- 
+
   .contact-body {
     font-size: 0.95rem;
     color: #4A5C4B;
     margin-top: 1.5rem;
   }
- 
+
   .contact-links {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
   }
- 
+
   .contact-link {
     display: flex;
     align-items: center;
@@ -434,10 +433,10 @@
     padding-bottom: 1.25rem;
     border-bottom: 1px solid rgba(44, 59, 46, 0.15);
   }
- 
+
   .contact-link:last-child { border-bottom: none; }
   .contact-link:hover { opacity: 0.6; }
- 
+
   .contact-link-label {
     font-size: 0.7rem;
     letter-spacing: 0.1em;
@@ -446,13 +445,13 @@
     display: block;
     margin-bottom: 0.15rem;
   }
- 
+
   .contact-link-value {
     font-family: var(--serif-display);
     font-size: 0.95rem;
     color: var(--moss);
   }
- 
+
   /* FOOTER */
   footer {
     padding: 2rem 3rem;
@@ -461,7 +460,7 @@
     align-items: center;
     border-top: 1px solid rgba(44, 59, 46, 0.12);
   }
- 
+
   .footer-brand {
     font-family: var(--serif-display);
     font-size: 0.85rem;
@@ -469,13 +468,13 @@
     color: var(--moss);
     letter-spacing: 0.05em;
   }
- 
+
   .footer-copy {
     font-size: 0.75rem;
     color: var(--mid);
     letter-spacing: 0.04em;
   }
- 
+
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
@@ -488,16 +487,16 @@
     .approach-heading { position: static; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
- 
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
 </style>
 </head>
 <body>
- 
+
 <nav>
-  <a href="#" class="nav-brand">Matiz<span class="nav-brand-sub">Digital transformation · Sandra Guiomar</span></a>
+  <a href="#" class="nav-brand">Matiz<span class="nav-brand-sub">Digital transformation · Sara Moniz</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#work">Work</a></li>
@@ -505,7 +504,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
- 
+
 <div style="position:relative;">
   <div class="hero">
     <div class="hero-inner">
@@ -517,7 +516,7 @@
   </div>
   <a href="#about" class="hero-scroll">scroll</a>
 </div>
- 
+
 <section id="about">
   <p class="section-label">About</p>
   <div class="about-grid">
@@ -541,13 +540,13 @@
     </div>
   </div>
 </section>
- 
+
 <div id="work">
   <div class="section-inner">
     <p class="section-label" style="color:rgba(200,217,194,0.6); --after-bg:rgba(200,217,194,0.2);">Selected work</p>
     <div class="cases-grid">
- 
-      <a class="case-card" href=" cuidadores.html " target="_blank" rel="noopener">
+
+      <a class="case-card" href="cuidadores.html" 
         <p class="case-num">01</p>
         <p class="case-sector">Social impact · Informal caregiving</p>
         <h3 class="case-title">Do you look after someone?</h3>
@@ -559,8 +558,8 @@
         </div>
         <p class="case-arrow">View case study →</p>
       </a>
- 
-      <a class="case-card" href=" food-brand.html " target="_blank" rel="noopener">
+
+      <a class="case-card" href="food-brand.html" 
         <p class="case-num">02</p>
         <p class="case-sector">Artisan food · E-commerce</p>
         <h3 class="case-title">How do you sell a sensory experience through a screen?</h3>
@@ -572,8 +571,8 @@
         </div>
         <p class="case-arrow">View case study →</p>
       </a>
- 
-      <a class="case-card" href="  patina.html " target="_blank" rel="noopener">
+
+      <a class="case-card" href="patina.html" 
         <p class="case-num">03</p>
         <p class="case-sector">Arts & craft · Multi-generational studio</p>
         <h3 class="case-title">The smell of clay. The weight of a tool worn smooth. Knowledge passed hand to hand.</h3>
@@ -585,11 +584,11 @@
         </div>
         <p class="case-arrow">View case study →</p>
       </a>
- 
+
     </div>
   </div>
 </div>
- 
+
 <section id="approach">
   <p class="section-label">How I work</p>
   <div class="approach-grid">
@@ -614,7 +613,7 @@
     </div>
   </div>
 </section>
- 
+
 <div id="contact">
   <div class="section-inner">
     <p class="section-label">Let's talk</p>
@@ -624,35 +623,33 @@
         <p class="contact-body">I work with 3–5 clients at a time. If what you do carries real purpose and your digital presence hasn't caught up with that yet, let's talk. I'll tell you honestly whether we're a fit.</p>
       </div>
       <div class="contact-links">
-        <a href="mailto: sandraguiom24@gmail.com " class="contact-link">
+        <a href="mailto:sara@matiz.studio" class="contact-link">
           <div>
             <span class="contact-link-label">Email</span>
-            <span class="contact-link-value">sandraguiom24@gmail.com</span>
+            <span class="contact-link-value">sara@matiz.studio</span>
           </div>
         </a>
         <a href="https://linkedin.com/in/sandra-guiomar" target="_blank" rel="noopener" class="contact-link">
           <div>
             <span class="contact-link-label">LinkedIn</span>
-            <span class="contact-link-value">Sandra Guiomar · Matiz</span>
+            <span class="contact-link-value">Sara Moniz · Matiz</span>
           </div>
         </a>
         <a href="https://www.notion.so" target="_blank" rel="noopener" class="contact-link">
           <div>
             <span class="contact-link-label">Portfolio</span>
-            <span class="contact-link-value">Matiz by Sandra Guiomar </span>
+            <span class="contact-link-value">Matiz by Sara Moniz on Notion</span>
           </div>
         </a>
       </div>
     </div>
   </div>
 </div>
- 
+
 <footer>
   <span class="footer-brand">Matiz</span>
-  <span class="footer-copy">Sandra Guiomar · Digital Transformation Consultant · Portugal</span>
+  <span class="footer-copy">Sara Moniz · Digital Transformation Consultant · Portugal</span>
 </footer>
- 
-</body>
-</html> 
 
- 
+</body>
+</html>
