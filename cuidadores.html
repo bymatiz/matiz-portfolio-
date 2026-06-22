@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cuidadores - Matiz by Sandra Guiomar</title>
+<title>Cuidadores - Matiz by Sara Moniz</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -39,9 +39,9 @@
   .case-eyebrow { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(30,58,70,0.6); margin-bottom: 1rem; }
   .case-hero h1 { font-family: var(--serif-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; line-height: 1.3; color: #1E3A46; margin-bottom: 0; }
   .case-hero h1 em { font-style: italic; color: rgba(30,58,70,0.65); }
-  .case-meta { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0; padding-bottom: 2.5rem; padding-top: 0.5rem; }
-  .case-meta-item { border-top: 1px solid rgba(200,217,194,0.25); padding-top: 0.75rem; padding-bottom: 0.75rem; padding-right: 2rem; flex: 0 0 auto; }
-  .case-meta-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(30,58,70,0.45); margin-bottom: 0.25rem; }
+  .case-meta { display: flex; flex-direction: column; gap: 0; padding-top: 0.5rem; }
+  .case-meta-item { border-top: 1px solid rgba(30,58,70,0.15); padding-top: 0.85rem; padding-bottom: 0.85rem; }
+  .case-meta-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(30,58,70,0.45); margin-bottom: 0.3rem; }
   .case-meta-value { font-size: 0.875rem; color: rgba(30,58,70,0.8); }
   .case-hero-image { width: 100%; max-height: 320px; object-fit: cover; object-position: top center; display: block; opacity: 0.88; }
 
@@ -102,7 +102,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-brand">Matiz<span class="nav-brand-sub">Digital transformation · Sandra Guiomar</span></a>
+  <a href="index.html" class="nav-brand">Matiz<span class="nav-brand-sub">Digital transformation · Sara Moniz</span></a>
   <a href="index.html#work" class="nav-back">← Back to portfolio</a>
 </nav>
 
@@ -111,27 +111,24 @@
     <div>
       <p class="case-eyebrow">Nonprofit · Website Redesign · 2026</p>
       <h1>When design makes the next step<br><em>feel possible.</em></h1>
-      <div class="case-meta">
-        <div class="case-meta-item">
-          <p class="case-meta-label">Sector</p>
-          <p class="case-meta-value">Social impact · Informal caregiving</p>
-        </div>
-        <div class="case-meta-item">
-          <p class="case-meta-label">Scope</p>
-          <p class="case-meta-value">Website redesign · Copywriting · UX Strategy</p>
-        </div>
-        <div class="case-meta-item">
-          <p class="case-meta-label">Tools</p>
-          <p class="case-meta-value">Wix · Tally · Copywriting</p>
-        </div>
-        <div class="case-meta-item">
-          <p class="case-meta-label">Timeline</p>
-          <p class="case-meta-value">6 weeks</p>
-        </div>
-      </div>
     </div>
-    <div style="align-self: center; overflow: hidden;">
-      <img src="img-cuidadores-hero.png" alt="Cuidadores website redesign" class="case-hero-image">
+    <div class="case-meta">
+      <div class="case-meta-item">
+        <p class="case-meta-label">Sector</p>
+        <p class="case-meta-value">Social impact · Informal caregiving</p>
+      </div>
+      <div class="case-meta-item">
+        <p class="case-meta-label">Scope</p>
+        <p class="case-meta-value">Website redesign · Copywriting · UX Strategy</p>
+      </div>
+      <div class="case-meta-item">
+        <p class="case-meta-label">Tools</p>
+        <p class="case-meta-value">Wix · Tally · Copywriting</p>
+      </div>
+      <div class="case-meta-item">
+        <p class="case-meta-label">Timeline</p>
+        <p class="case-meta-value">6 weeks</p>
+      </div>
     </div>
   </div>
 </div>
@@ -163,8 +160,10 @@
             <p class="case-image-pair-label">Before</p>
           </div>
           <div>
-            <img src="Homepage___Cuidadores.png" alt="Cuidadores redesigned homepage" style="width:100%; display:block;">
-            <p class="case-image-pair-label">After</p>
+            <p class="case-image-pair-label" style="margin-bottom:0.75rem;">After — three moments that tell the story</p>
+            <img src="img-cuidadores-after-cards.png" alt="Antes, Durante, Depois journey cards" style="width:100%; display:block; margin-bottom:0.5rem;">
+            <img src="img-cuidadores-after-stats.png" alt="10 years of impact — key numbers" style="width:100%; display:block; margin-bottom:0.5rem;">
+            <img src="img-cuidadores-after-cta.png" alt="Three audience pathways in the footer" style="width:100%; display:block;">
           </div>
         </div>
       </div>
@@ -231,7 +230,7 @@
       <div class="case-section-content">
         <div class="reflection-block">
           <blockquote>"The most important lesson wasn't technical - it was learning to design for the person who arrives worn down, and needs to feel understood before anything else."</blockquote>
-          <p style="margin-top: 1.5rem; font-size: 0.82rem; color: rgba(42,74,84,0.6); line-height: 1.7; font-style: normal;">Some choices here reflect the founder's priorities. Navigating that - without losing the strategic thread - is part of the work too.</p>
+          <p style="margin-top: 1.5rem; font-size: 0.82rem; color: rgba(42,74,84,0.6); line-height: 1.7; font-style: normal;">Some choices here reflect the founder's priorities, others the limits of a free-tier toolset chosen to keep costs at zero. Navigating both - without losing the strategic thread - is part of the work too.</p>
         </div>
       </div>
     </div>
@@ -244,7 +243,7 @@
     <div>
       <h2>A nonprofit or purpose-driven project where the people it serves<br><em>don't yet see themselves in it?</em></h2>
       <p>That's exactly where this work begins. Start with a conversation.</p>
-      <a href="mailto:sandraguiom24@gmail.com" class="cta-link">Start where your audience is</a><br>
+      <a href="index.html#contact" class="cta-link">Start where your audience is</a><br>
       <a href="index.html#work" class="back-link">← Back to portfolio</a>
     </div>
     <div></div>
@@ -253,7 +252,7 @@
 
 <footer>
   <span class="footer-brand">Matiz</span>
-  <span class="footer-copy">Sandra Guiomar · Digital Transformation Consultant · Portugal</span>
+  <span class="footer-copy">Sara Moniz · Digital Transformation Consultant · Portugal</span>
 </footer>
 
 </body>
