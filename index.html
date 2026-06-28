@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matiz - Sara Moniz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --moss: #4E6650;
+    --sage: #C8D9C2;
+    --cream: #F5F2ED;
+    --ink: #1A1F1B;
+    --mist: #E8EDE6;
+    --mid: #6B7D6D;
+    --serif-display: 'Libre Baskerville', Georgia, serif;
+    --serif-body: 'Lora', Georgia, serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--serif-body); background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(245,242,237,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(44,59,46,0.1);
+  }
+  .nav-brand { font-family: var(--serif-display); font-size: 1.1rem; font-weight: 700; color: var(--moss); letter-spacing: 0.04em; text-decoration: none; display: flex; flex-direction: column; gap: 0.1rem; }
+  .nav-brand-sub { font-family: var(--serif-body); font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; color: var(--mid); text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: var(--serif-body); font-size: 0.875rem; color: var(--mid); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--moss); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 3rem 5rem; max-width: 1100px; margin: 0 auto; }
+  .hero-inner { max-width: 700px; }
+  .hero-eyebrow { font-family: var(--serif-body); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); margin-bottom: 2rem; }
+
+  /* HIGHLIGHT: palavras-chave do hero em sage/moss */
+  .hero h1 { font-family: var(--serif-display); font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 400; line-height: 1.5; color: var(--moss); margin-bottom: 1.75rem; }
+  .hero h1 em { font-style: italic; font-size: 0.78em; color: var(--mid); display: block; }
+  .hero h1 .hl { color: #2C3B2E; font-style: italic; }
+
+  .hero-body { font-size: 1.05rem; color: #3D4D3E; max-width: 540px; margin-bottom: 2.5rem; line-height: 1.8; }
+  .hero-body strong { font-weight: inherit; color: #1E2D1F; }
+  /* HIGHLIGHT: frase âncora em destaque */
+  .hero-body .anchor { display: block; margin-top: 1.5rem; font-family: var(--serif-display); font-size: 1rem; color: var(--moss); font-style: italic; border-left: 2px solid var(--sage); padding-left: 1rem; }
+
+  .hero-cta { display: inline-block; font-family: var(--serif-body); font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cream); background: var(--moss); padding: 0.85rem 2rem; text-decoration: none; transition: background 0.2s; }
+  .hero-cta:hover { background: #1A2B1C; }
+
+  .hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); text-decoration: none; }
+  .hero-scroll::after { content: ''; width: 1px; height: 40px; background: var(--mid); opacity: 0.4; }
+
+  /* SECTION BASE */
+  section { padding: 6rem 3rem; max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); margin-bottom: 3rem; display: flex; align-items: center; gap: 1rem; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(44,59,46,0.2); }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .about-heading { font-family: var(--serif-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; line-height: 1.25; color: var(--moss); margin-bottom: 2rem; }
+  .about-heading em { font-style: italic; }
+  .about-body p { color: #3D4D3E; margin-bottom: 1.2rem; font-size: 1rem; }
+  .about-body strong { font-weight: inherit; color: #1E2D1F; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+  .tag { font-family: var(--serif-body); font-size: 0.75rem; letter-spacing: 0.05em; color: var(--moss); border: 1px solid rgba(44,59,46,0.35); padding: 0.3rem 0.8rem; }
+
+  /* WORK */
+  #work { background: var(--moss); max-width: 100%; padding: 6rem 3rem; }
+  #work > .section-inner { max-width: 1100px; margin: 0 auto; }
+  #work .section-label { color: rgba(200,217,194,0.6); }
+  #work .section-label::after { background: rgba(200,217,194,0.2); }
+
+  .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(200,217,194,0.15); }
+
+  .case-card {
+    background: var(--moss);
+    cursor: pointer;
+    transition: background 0.25s;
+    border: 1px solid rgba(200,217,194,0.1);
+    text-decoration: none;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .case-card:hover { background: #3A5040; }
+  .case-card:hover .case-arrow { opacity: 1; }
+
+  /* VISUAL BAND: faixa de cor por case study */
+  .case-visual {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem 2rem;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .case-visual-num {
+    font-family: var(--serif-display);
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0.18;
+    color: #fff;
+    position: absolute;
+    right: 1.5rem;
+    bottom: 0.5rem;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+  .case-visual-sector {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Cor da faixa por case */
+  .case-visual--food { background: linear-gradient(135deg, #5C7060 0%, #4A5C4E 60%, #3A4A3C 100%); }
+  .case-visual--craft { background: linear-gradient(135deg, #7A8E78 0%, #647865 60%, #4E5E50 100%); }
+  .case-visual--cuidadores { background: linear-gradient(135deg, #5C6E6A 0%, #4A5C58 60%, #384845 100%); }
+
+  /* Ícone geométrico decorativo por case */
+  .case-visual::before {
+    content: '';
+    position: absolute;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+    top: -30px; left: -20px;
+  }
+  .case-visual::after {
+    content: '';
+    position: absolute;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    top: 20px; left: 20px;
+  }
+
+  .case-card-body { padding: 2rem 2rem 2rem; display: flex; flex-direction: column; flex: 1; background: rgba(0,0,0,0.08); }
+  .case-num { font-family: var(--serif-display); font-size: 0.7rem; letter-spacing: 0.15em; color: rgba(200,217,194,0.35); margin-bottom: 0.75rem; }
+  .case-title { font-family: var(--serif-display); font-size: 1.1rem; font-weight: 400; color: var(--sage); line-height: 1.3; margin-bottom: 1rem; }
+  .case-body { font-size: 0.875rem; color: rgba(200,217,194,0.6); line-height: 1.65; margin-bottom: 1.5rem; flex: 1; }
+  .case-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+  .case-tag { font-size: 0.7rem; letter-spacing: 0.05em; color: rgba(200,217,194,0.5); border: 1px solid rgba(200,217,194,0.2); padding: 0.2rem 0.6rem; flex: 0 1 auto; }
+  .case-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; align-content: flex-start; }
+  .case-arrow { margin-top: 1rem; font-size: 0.75rem; color: var(--sage); opacity: 0.45; letter-spacing: 0.08em; transition: opacity 0.2s; }
+
+  /* APPROACH */
+  .approach-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
+  .approach-heading { font-family: var(--serif-display); font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 400; line-height: 1.25; color: var(--moss); position: sticky; top: 6rem; }
+  .approach-heading em { font-style: italic; }
+  .pillars { display: flex; flex-direction: column; gap: 0; }
+  .pillar { padding: 2rem 0; border-bottom: 1px solid rgba(44,59,46,0.12); }
+  .pillar:first-child { border-top: 1px solid rgba(44,59,46,0.12); }
+  .pillar-title { font-family: var(--serif-display); font-size: 1rem; font-weight: 700; color: var(--moss); margin-bottom: 0.6rem; }
+  .pillar-body { font-size: 0.95rem; color: #4A5C4B; line-height: 1.7; }
+
+  /* CONTACT */
+  #contact { background: var(--mist); max-width: 100%; padding: 6rem 3rem; }
+  #contact > .section-inner { max-width: 1100px; margin: 0 auto; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .contact-heading { font-family: var(--serif-display); font-size: clamp(1.4rem, 2vw, 1.9rem); font-weight: 400; line-height: 1.35; color: var(--moss); }
+  .contact-heading em { font-style: italic; }
+  .contact-body { font-size: 0.95rem; color: #4A5C4B; margin-top: 1.5rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1.25rem; }
+  .contact-link { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--moss); font-size: 0.9rem; letter-spacing: 0.02em; transition: opacity 0.2s; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(44,59,46,0.15); }
+  .contact-link:last-child { border-bottom: none; }
+  .contact-link:hover { opacity: 0.6; }
+  .contact-link-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); display: block; margin-bottom: 0.15rem; }
+  .contact-link-value { font-family: var(--serif-display); font-size: 0.95rem; color: var(--moss); }
+
+  /* FOOTER */
+  footer { padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(44,59,46,0.12); }
+  .footer-brand { font-family: var(--serif-display); font-size: 0.85rem; font-weight: 700; color: var(--moss); letter-spacing: 0.05em; }
+  .footer-copy { font-size: 0.75rem; color: var(--mid); letter-spacing: 0.04em; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero, section { padding: 5rem 1.5rem; }
+    #work, #contact { padding: 5rem 1.5rem; }
+    .hero h1 { font-size: 2rem; }
+    .about-grid, .approach-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .approach-heading { position: static; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Matiz<span class="nav-brand-sub">Digital transformation · Sara Moniz</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div style="position:relative;">
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">I think like a marketer. I build like a designer.</p>
+      <h1>Some brands carry more<br>than a product.<br><em>Their digital presence should feel like<br><span class="hl">it knows that.</span></em></h1>
+      <p class="hero-body">I work with organisations and producers where what they do carries <strong style="color:#0D1F0F;font-weight:inherit;">real weight</strong> — a way of making things, a set of <strong style="color:#0D1F0F;font-weight:inherit;">values</strong>, a <strong style="color:#0D1F0F;font-weight:inherit;">purpose</strong> that took time to become what it is.
+        <span class="anchor">I don't build for brands. I build from inside them.</span>
+      </p>
+      <a href="#work" class="hero-cta">View selected work</a>
+    </div>
+  </div>
+  <a href="#about" class="hero-scroll">scroll</a>
+</div>
+
+
+<div style="background: var(--moss); padding: 5rem 3rem;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <p style="font-family: var(--serif-display); font-size: clamp(1.2rem, 2vw, 1.7rem); font-style: italic; color: var(--sage); line-height: 1.6; max-width: 680px;">"Most briefs ask me to make something look good.<br>The ones I say yes to ask me to make something feel true."</p>
+    <p style="font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(200,217,194,0.4); margin-top: 1.5rem;">Sara Moniz · Matiz</p>
+  </div>
+</div>
+
+<section id="about">
+  <p class="section-label">About</p>
+  <div class="about-grid">
+    <div>
+      <h2 class="about-heading"><span style="color:rgba(46,61,46,0.35); display:block;">I don't make websites.</span><em>I create environments.</em></h2>
+    </div>
+    <div class="about-body">
+      <p>I thought school was for making drawings. Turns out, I wasn't wrong - just early. What followed was a long, useful detour: enough <strong style="color:#0D1F0F;font-weight:inherit;">business</strong> to understand what organisations need, enough <strong style="color:#0D1F0F;font-weight:inherit;">communication</strong> to close the gap between the two. The drawing was always there. The detour gave it substance.</p>
+      <p>Before I touch the tools, I need to understand <strong>who's on the other side of the screen</strong> - what they're afraid of, what they're hoping for, what would make them stay. That's where the work begins.</p>
+      <p>The briefs I'm drawn to are the ones where what a brand does carries <strong>genuine purpose</strong style="color:#0D1F0F;font-weight:inherit;"> - whether that's decades of accumulated craft, a regenerative production model, or a mission that puts real people first. What matters is that the <em>why</em> has weight. The digital presence is where that weight either <strong style="color:#0D1F0F;font-weight:inherit;">lands or gets lost</strong>.</p>
+      <div class="tags">
+        <span class="tag">Webflow</span>
+        <span class="tag">Shopify</span>
+        <span class="tag">Brevo</span>
+        <span class="tag">Brand Strategy</span>
+        <span class="tag">Automation</span>
+        <span class="tag">Emotional Design</span>
+        <span class="tag">ESG · Impact</span>
+        <span class="tag">UX Writing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="work">
+  <div class="section-inner">
+    <p class="section-label" style="color:rgba(200,217,194,0.6);">Selected work</p>
+    <div class="cases-grid">
+
+      <a class="case-card" href="food-brand.html">
+        <div class="case-visual case-visual--food">
+          <span class="case-visual-num">1</span>
+          <span class="case-visual-sector">Artisan food · E-commerce</span>
+        </div>
+        <div class="case-card-body">
+          <h3 class="case-title">How do you sell a sensory experience through a screen?</h3>
+          <p class="case-body">From regenerative soil to stone-milled grain to wood-fired kitchen - a food brand where the ingredient's journey is part of the flavour. Making that felt online: the smell of bread in the oven, the texture of an afternoon crust, the pleasure of a meal that carries no compromise.</p>
+          <div class="case-tags">
+            <span class="case-tag">Brand strategy</span>
+            <span class="case-tag">E-commerce</span>
+            <span class="case-tag">Sensory storytelling</span>
+          </div>
+          <p class="case-arrow">View case study →</p>
+        </div>
+      </a>
+
+      <a class="case-card" href="patina.html">
+        <div class="case-visual case-visual--craft">
+          <span class="case-visual-num">2</span>
+          <span class="case-visual-sector">Arts & craft · Multi-generational studio</span>
+        </div>
+        <div class="case-card-body">
+          <h3 class="case-title">The smell of clay. The weight of a tool worn smooth. Knowledge passed hand to hand.</h3>
+          <p class="case-body">A studio holding generations of craft - wood, clay, natural dye, glass, metal. The digital platform had to carry that without flattening it: heritage dressed in contemporaneity, where accumulated knowledge finds new hands to pass through.</p>
+          <div class="case-tags">
+            <span class="case-tag">Platform design</span>
+            <span class="case-tag">Craft heritage</span>
+            <span class="case-tag">Cultural identity</span>
+          </div>
+          <p class="case-arrow">View case study →</p>
+        </div>
+      </a>
+
+      <a class="case-card" href="cuidadores.html">
+        <div class="case-visual case-visual--cuidadores">
+          <span class="case-visual-num">3</span>
+          <span class="case-visual-sector">Social impact · Informal caregiving</span>
+        </div>
+        <div class="case-card-body">
+          <h3 class="case-title">Do you look after someone?</h3>
+          <p class="case-body">Many caregivers don't recognise themselves as such. They're too exhausted and absorbed in the other person to look for support - and too used to not being the one who needs it. Removing every barrier, visual and emotional, until the next step felt like relief, not effort.</p>
+          <div class="case-tags">
+            <span class="case-tag">Web redesign</span>
+            <span class="case-tag">Audience</span>
+            <span class="case-tag">Content strategy</span>
+          </div>
+          <p class="case-arrow">View case study →</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<section id="approach">
+  <p class="section-label">How I work</p>
+  <div class="approach-grid">
+    <h2 class="approach-heading">The craft<br><em>behind the strategy.</em></h2>
+    <div class="pillars">
+      <div class="pillar">
+        <p class="pillar-title">Identity before interface</p>
+        <p class="pillar-body">A digital presence that doesn't reflect who you actually are will always feel wrong - to you and to your audience. I start with brand identity, not with platform choice. The platform follows.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-title">Inside the brand, not outside it</p>
+        <p class="pillar-body">Before I touch the tools, I need to understand who's on the other side of the screen - what they're afraid of, what they're hoping for, what would make them stay. That's where every decision begins.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-title">Autonomy as a design principle</p>
+        <p class="pillar-body">Every site I build, you should be able to run. No recurring agency dependency for a banner update or a new product page. The build is complete when you don't need me anymore.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-title">Purpose with weight</p>
+        <p class="pillar-body">The work I'm drawn to is with brands where the why is genuine - a craft refined over time, a regenerative production model, a mission that puts real people first. Heritage or startup, established or just beginning: what matters is that the purpose is real. The digital presence is where that either lands or gets lost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="contact">
+  <div class="section-inner">
+    <p class="section-label">Bring your ideas</p>
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-heading">Start with a conversation.<br><em>See where it goes.</em></h2>
+        <p class="contact-body">I work with 3–5 clients at a time. If what you do carries real purpose and your digital presence hasn't caught up with that yet, let's talk. I'll tell you honestly whether we're a fit.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:sara@matiz.studio" class="contact-link">
+          <div>
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">sara@matiz.studio</span>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/sandra-guiomar" target="_blank" rel="noopener" class="contact-link">
+          <div>
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-value">Sara Moniz · Matiz</span>
+          </div>
+        </a>
+        <a href="https://cal.eu/matiz/first-conversation" target="_blank" rel="noopener" class="contact-link">
+          <div>
+            <span class="contact-link-label">Virtual coffee</span>
+            <span class="contact-link-value">30 min · informal, no commitment</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-brand">Matiz</span>
+  <span class="footer-copy">© 2026 Matiz</span>
+</footer>
+
+</body>
+</html>
