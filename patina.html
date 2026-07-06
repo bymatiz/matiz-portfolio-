@@ -7,7 +7,13 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon-180.png"> 
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Craft Studio · Matiz by Sandra Guiomar">
+  <meta property="og:description" content="For brands that mean something. Strategy, websites, automation.">
+  <meta property="og:image" content="https://matiz-portfolio.vercel.app/og-image.png">
+  <meta property="og:url" content="https://matiz-portfolio.vercel.app/patina.html">
+  <meta name="twitter:card" content="summary_large_image"> 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -29,7 +35,9 @@
     background: rgba(245,242,237,0.92); backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(44,59,46,0.1);
   }
-  .nav-brand { font-family: var(--serif-display); font-size: 1.1rem; font-weight: 700; color: var(--moss); letter-spacing: 0.04em; text-decoration: none; display: flex; flex-direction: column; gap: 0.1rem; }
+  .nav-brand { display: flex; flex-direction: row; align-items: center; gap: 0.55rem; font-family: var(--serif-display); font-size: 1.1rem; font-weight: 700; color: var(--moss); letter-spacing: 0.04em; text-decoration: none; }
+  .nav-leaf { height: 30px; width: auto; display: block; flex-shrink: 0; }
+  .nav-brand-text { display: flex; flex-direction: column; gap: 0.1rem; }
   .nav-brand-sub { font-family: var(--serif-body); font-size: 0.65rem; font-weight: 400; letter-spacing: 0.1em; color: var(--mid); text-transform: uppercase; }
   .nav-back { font-family: var(--serif-body); font-size: 0.875rem; color: var(--mid); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
   .nav-back:hover { color: var(--moss); }
@@ -128,7 +136,10 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-brand">Matiz<span class="nav-brand-sub">Digital transformation · Sandra Guiomar</span></a>
+  <a href="index.html" class="nav-brand">
+    <img src="/matiz-leaf-nav.svg" alt="Matiz" class="nav-leaf">
+    <span class="nav-brand-text">Matiz<span class="nav-brand-sub">Digital transformation · Sandra Guiomar</span></span>
+  </a>
   <a href="index.html#work" class="nav-back">← Back to portfolio</a>
 </nav>
 
